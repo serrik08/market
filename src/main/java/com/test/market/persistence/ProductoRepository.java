@@ -14,10 +14,10 @@ public class ProductoRepository {
     }
 
     public List<Producto> getByCategoria(int idCategoria) {
-        return productoCrudRepository.findByIdCategoriaOrderByNombreAsc(idCategoria);
+        return (List<Producto>) productoCrudRepository.findByIdCategoriaOrderByNombreAsc(idCategoria);
     }
 
     public Optional<List<Producto>> getEscasos(int cantidad) {
-        return productoCrudRepository.findByCantidadStockLessThanAndEstado(cantidad, true);
+        return (List<Producto>) productoCrudRepository.findByCantidadStockLessThanAndEstado(cantidad, true);
     }
 }
