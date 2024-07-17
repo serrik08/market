@@ -2,7 +2,7 @@ package com.test.market.persistence;
 
 import com.test.market.persistence.crud.ProductoCrudRepository;
 import com.test.market.persistence.entity.Producto;
-
+import java.util.List;
 import java.util.Optional;
 
 public class ProductoRepository {
@@ -18,6 +18,6 @@ public class ProductoRepository {
     }
 
     public Optional<List<Producto>> getEscasos(int cantidad) {
-        return (List<Producto>) productoCrudRepository.findByCantidadStockLessThanAndEstado(cantidad, true);
+        return (Optional<List<Producto>>) productoCrudRepository.findByCantidadStockLessThanAndEstado(cantidad, true);
     }
 }
